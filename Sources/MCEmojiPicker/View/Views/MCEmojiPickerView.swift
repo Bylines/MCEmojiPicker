@@ -202,6 +202,11 @@ final class MCEmojiPickerView: UIView {
     }
     
     private func setupCategoryViews() {
+        // Make sure this doesn't happen multiple times.
+        guard categoryViews.isEmpty else {
+            return
+        }
+
         for categoryIndex in 0...emojiCategoryTypes.count - 1 {
             let categoryView = MCTouchableEmojiCategoryView(
                 delegate: self,
