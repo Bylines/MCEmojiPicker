@@ -88,8 +88,7 @@ final class MCEmojiPickerViewModel: MCEmojiPickerViewModelProtocol {
         if !searchText.isEmpty {
             for i in displayedEmojiCategories.indices {
                 displayedEmojiCategories[i].emojis.removeAll {
-                    !$0.searchKey.localizedCaseInsensitiveContains(searchText) &&
-                        !$0.string.localizedCaseInsensitiveContains(searchText)
+                    !$0.matches(searchText: searchText)
                 }
             }
         }
