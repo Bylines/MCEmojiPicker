@@ -25,9 +25,12 @@ let package = Package(
                 .copy("Resources/EmojiDefinitions/emotionsAndPeople.json"),
                 .copy("Resources/EmojiDefinitions/animalsAndNature.json"),
                 .copy("Resources/EmojiDefinitions/activities.json"),
+                .copy("Resources/EmojiSearchKeywords.json"),
+                .copy("Resources/EmojiSearchKeywords-LICENSE.txt"),
             ]
         ),
-        .executableTarget(name: "MCEmojiPickerJSON", dependencies: ["MCEmojiPicker"])
+        .executableTarget(name: "MCEmojiPickerJSON", dependencies: ["MCEmojiPicker"]),
+        .testTarget(name: "MCEmojiPickerTests", dependencies: ["MCEmojiPicker"])
     ],
     swiftLanguageVersions: [.v4_2]
 )
